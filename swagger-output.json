@@ -5,10 +5,10 @@
     "description": "CSE 341 CRUD API using MongoDB",
     "version": "1.0.0"
   },
-  "host": "localhost:3000/student",
+  "host": "https://college-api-gz7o.onrender.com/student",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/": {

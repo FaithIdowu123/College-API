@@ -5,8 +5,8 @@ const doc = {
     title: 'College API',
     description: 'CSE 341 CRUD API using MongoDB'
   },
-  host: 'localhost:3000/student',
-  schemes: ['http']
+  host: 'https://college-api-gz7o.onrender.com/student',
+  schemes: ['https']
 };
 
 const outputFile = './swagger-output.json';
