@@ -5,7 +5,7 @@ const doc = {
     title: 'College API',
     description: 'CSE 341 CRUD API using MongoDB'
   },
-  host: 'https://college-api-gz7o.onrender.com/student',
+  host: 'college-api-gz7o.onrender.com/student',
   schemes: ['https']
 };
 
