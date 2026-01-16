@@ -1,0 +1,182 @@
+[
+  {
+    "firstName": "Faith",
+    "lastName": "Idowu",
+    "email": "faith.idowu@byui.edu",
+    "studentId": "BYUI001",
+    "major": "Software Development",
+    "enrollmentYear": 2023,
+    "isActive": true
+  },
+  {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@byui.edu",
+    "studentId": "BYUI002",
+    "major": "Computer Science",
+    "enrollmentYear": 2022,
+    "isActive": true
+  },
+  {
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "email": "jane.smith@byui.edu",
+    "studentId": "BYUI003",
+    "major": "Information Technology",
+    "enrollmentYear": 2021,
+    "isActive": true
+  },
+  {
+    "firstName": "Michael",
+    "lastName": "Brown",
+    "email": "michael.brown@byui.edu",
+    "studentId": "BYUI004",
+    "major": "Data Science",
+    "enrollmentYear": 2024,
+    "isActive": true
+  },
+  {
+    "firstName": "Sarah",
+    "lastName": "Johnson",
+    "email": "sarah.johnson@byui.edu",
+    "studentId": "BYUI005",
+    "major": "Web Development",
+    "enrollmentYear": 2020,
+    "isActive": false
+  },
+  {
+    "firstName": "David",
+    "lastName": "Wilson",
+    "email": "david.wilson@byui.edu",
+    "studentId": "BYUI006",
+    "major": "Cybersecurity",
+    "enrollmentYear": 2023,
+    "isActive": true
+  },
+  {
+    "firstName": "Emily",
+    "lastName": "Taylor",
+    "email": "emily.taylor@byui.edu",
+    "studentId": "BYUI007",
+    "major": "Computer Engineering",
+    "enrollmentYear": 2022,
+    "isActive": true
+  },
+  {
+    "firstName": "Daniel",
+    "lastName": "Anderson",
+    "email": "daniel.anderson@byui.edu",
+    "studentId": "BYUI008",
+    "major": "Software Engineering",
+    "enrollmentYear": 2021,
+    "isActive": true
+  },
+  {
+    "firstName": "Olivia",
+    "lastName": "Thomas",
+    "email": "olivia.thomas@byui.edu",
+    "studentId": "BYUI009",
+    "major": "Information Systems",
+    "enrollmentYear": 2024,
+    "isActive": true
+  },
+  {
+    "firstName": "James",
+    "lastName": "Martinez",
+    "email": "james.martinez@byui.edu",
+    "studentId": "BYUI010",
+    "major": "Business Analytics",
+    "enrollmentYear": 2020,
+    "isActive": false
+  },
+  {
+    "firstName": "Sophia",
+    "lastName": "Garcia",
+    "email": "sophia.garcia@byui.edu",
+    "studentId": "BYUI011",
+    "major": "Computer Science",
+    "enrollmentYear": 2023,
+    "isActive": true
+  },
+  {
+    "firstName": "William",
+    "lastName": "Lee",
+    "email": "william.lee@byui.edu",
+    "studentId": "BYUI012",
+    "major": "Software Development",
+    "enrollmentYear": 2022,
+    "isActive": true
+  },
+  {
+    "firstName": "Ava",
+    "lastName": "Hernandez",
+    "email": "ava.hernandez@byui.edu",
+    "studentId": "BYUI013",
+    "major": "Data Analytics",
+    "enrollmentYear": 2021,
+    "isActive": false
+  },
+  {
+    "firstName": "Ethan",
+    "lastName": "Lopez",
+    "email": "ethan.lopez@byui.edu",
+    "studentId": "BYUI014",
+    "major": "Computer Science",
+    "enrollmentYear": 2024,
+    "isActive": true
+  },
+  {
+    "firstName": "Isabella",
+    "lastName": "Gonzalez",
+    "email": "isabella.gonzalez@byui.edu",
+    "studentId": "BYUI015",
+    "major": "Web Design",
+    "enrollmentYear": 2022,
+    "isActive": true
+  },
+  {
+    "firstName": "Noah",
+    "lastName": "Perez",
+    "email": "noah.perez@byui.edu",
+    "studentId": "BYUI016",
+    "major": "IT Management",
+    "enrollmentYear": 2023,
+    "isActive": true
+  },
+  {
+    "firstName": "Mia",
+    "lastName": "Clark",
+    "email": "mia.clark@byui.edu",
+    "studentId": "BYUI017",
+    "major": "Network Engineering",
+    "enrollmentYear": 2021,
+    "isActive": false
+  },
+  {
+    "firstName": "Lucas",
+    "lastName": "Rodriguez",
+    "email": "lucas.rodriguez@byui.edu",
+    "studentId": "BYUI018",
+    "major": "Artificial Intelligence",
+    "enrollmentYear": 2024,
+    "isActive": true
+  },
+  {
+    "firstName": "Charlotte",
+    "lastName": "Lewis",
+    "email": "charlotte.lewis@byui.edu",
+    "studentId": "BYUI019",
+    "major": "Cloud Computing",
+    "enrollmentYear": 2022,
+    "isActive": true
+  },
+  {
+    "firstName": "Benjamin",
+    "lastName": "Walker",
+    "email": "benjamin.walker@byui.edu",
+    "studentId": "BYUI020",
+    "major": "Software Testing",
+    "enrollmentYear": 2020,
+    "isActive": false
+  }
+]
