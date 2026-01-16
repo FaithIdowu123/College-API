@@ -27,11 +27,11 @@ app.use(errorHandler);
 
 const PORT = process.env.PORT || 3000;
 
-/* db.connectDB(process.env.MONGO_URI).then(() => {
-    console.log('Database connected successfully'); */
+db.connectDB(process.env.MONGO_URI).then(() => {
+    console.log('Database connected successfully');
     app.listen(PORT, () => {
         console.log(`Server is running on port ${PORT}`);
     });
-/* }).catch((error) => {
+}).catch((error) => {
     console.error('Failed to connect to the database:', error);
-}); */
+});
