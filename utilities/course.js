@@ -21,7 +21,6 @@ const courseSchema = Joi.object({
   department: Joi.string().min(2).max(50).required(),
   semester: Joi.string().min(3).max(50).required(),
   instructor: Joi.string().min(2).max(100).required(),
-  studentsEnrolled: Joi.array().items(Joi.string().min(3).max(20)) // optional
 });
 
 module.exports = {

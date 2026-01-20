@@ -1,6 +1,6 @@
 const validate = (schema) => {
-  return (req, res, next) => {
-    const { error } = schema.validate(req.body, { abortEarly: false }); // <-- key change
+  return async (req, res, next) => {
+    const { error } = await schema.validateAsync(req.body, { abortEarly: false }); // <-- key change
 
     if (error) {
       // Map all errors into an array of messages
@@ -11,5 +11,6 @@ const validate = (schema) => {
     next(); // Validation passed, continue to controller
   };
 };
+
 
 module.exports = validate;
