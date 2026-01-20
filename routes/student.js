@@ -4,32 +4,59 @@ const studentController = require('../controllers/student');
 const { studentSchema } = require('../utilities/student');
 const validate = require('../utilities/validate');
 
+// GET all students
 routes.get("/", async (req, res, next) => {
     try {
         await studentController.getAllStudents(req, res);
-    } catch(error) {
-        if (error.status == 500){
-            error.message = "Failed to fetch students"
-        }
-        next(error);
+    } catch (error) {
+        res.status(error.status || 500).json({
+            message: error.message || "Failed to fetch students"
+        });
     }
 });
 
+// GET student by ID
 routes.get("/:id", async (req, res, next) => {
     try {
         await studentController.getStudentById(req, res);
-    } catch(error) {
-        if (error.status == 500){
-            error.message = "Failed to fetch student"
-        }
-        next(error);
+    } catch (error) {
+        res.status(error.status || 500).json({
+            message: error.message || "Failed to fetch student"
+        });
     }
 });
 
-routes.post("/", validate(studentSchema), studentController.addStudent);
+// POST new student
+routes.post("/", validate(studentSchema), async (req, res) => {
+    try {
+        await studentController.addStudent(req, res);
+    } catch (error) {
+        res.status(error.status || 500).json({
+            message: error.message || "Failed to add student"
+        });
+    }
+});
 
-routes.put("/:id", validate(studentSchema), studentController.updateStudent);
+// PUT update student
+routes.put("/:id", validate(studentSchema), async (req, res) => {
+    try {
+        await studentController.updateStudent(req, res);
+    } catch (error) {
+        res.status(error.status || 500).json({
+            message: error.message || "Failed to update student"
+        });
+    }
+});
 
-routes.delete("/:id", studentController.deleteStudent);
+// DELETE student
+routes.delete("/:id", async (req, res) => {
+    try {
+        await studentController.deleteStudent(req, res);
+    } catch (error) {
+        res.status(error.status || 500).json({
+            message: error.message || "Failed to delete student"
+        });
+    }
+});
 
 module.exports = routes;
