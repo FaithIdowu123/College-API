@@ -1,4 +1,5 @@
 const Joi = require('joi');
+const { getDB } = require('../database/connect');
 
 const addStudentSchema = Joi.object({
   studentId: Joi.string().min(3).max(20).required().external(async (value) => {
