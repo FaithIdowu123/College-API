@@ -53,7 +53,7 @@ routes.put("/:id", validate(studentSchema), async (req, res) => {
 });
 
 // DELETE student
-routes.delete("/:id", async (req, resy) => {
+routes.delete("/:id", async (req, res) => {
     try {
         await studentController.deleteStudent(req, res);
     } catch (error) {

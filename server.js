@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const errorHandler = require("./utilities/errorHandler")
 const db = require('./database/connect');
 const routes = require('./routes');
 
@@ -19,7 +20,7 @@ app.get('/', (req, res) => {
 
 app.use("/", routes);
 
-
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 3000;
 
