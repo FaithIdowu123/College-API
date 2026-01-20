@@ -1,0 +1,202 @@
+[
+  {
+    "courseId": "CS101",
+    "title": "Introduction to Computer Science",
+    "description": "Learn the basics of programming, algorithms, and computer systems.",
+    "credits": 3,
+    "department": "Computer Science",
+    "semester": "Fall 2023",
+    "instructor": "Dr. Alice Johnson",
+    "studentsEnrolled": ["BYUI001","BYUI002","BYUI003"]
+  },
+  {
+    "courseId": "CS102",
+    "title": "Data Structures",
+    "description": "Learn about arrays, linked lists, trees, and algorithms.",
+    "credits": 3,
+    "department": "Computer Science",
+    "semester": "Fall 2023",
+    "instructor": "Dr. Bob Smith",
+    "studentsEnrolled": ["BYUI001","BYUI004","BYUI005"]
+  },
+  {
+    "courseId": "CS103",
+    "title": "Web Development",
+    "description": "Learn HTML, CSS, JavaScript, and backend integration.",
+    "credits": 3,
+    "department": "Software Development",
+    "semester": "Fall 2023",
+    "instructor": "Dr. Carol Davis",
+    "studentsEnrolled": ["BYUI005","BYUI006","BYUI007"]
+  },
+  {
+    "courseId": "CS104",
+    "title": "Database Systems",
+    "description": "Introduction to SQL, NoSQL, and database design principles.",
+    "credits": 3,
+    "department": "Information Technology",
+    "semester": "Spring 2024",
+    "instructor": "Dr. David Lee",
+    "studentsEnrolled": ["BYUI002","BYUI003","BYUI008"]
+  },
+  {
+    "courseId": "CS105",
+    "title": "Software Engineering",
+    "description": "Software lifecycle, Agile methods, and design patterns.",
+    "credits": 3,
+    "department": "Software Engineering",
+    "semester": "Spring 2024",
+    "instructor": "Dr. Eva Martin",
+    "studentsEnrolled": ["BYUI008","BYUI009","BYUI010"]
+  },
+  {
+    "courseId": "CS201",
+    "title": "Object-Oriented Programming",
+    "description": "OOP concepts, classes, inheritance, and encapsulation.",
+    "credits": 3,
+    "department": "Computer Science",
+    "semester": "Fall 2024",
+    "instructor": "Dr. Frank Harris",
+    "studentsEnrolled": ["BYUI001","BYUI011","BYUI012"]
+  },
+  {
+    "courseId": "CS202",
+    "title": "Computer Networks",
+    "description": "Networking fundamentals, protocols, and network design.",
+    "credits": 3,
+    "department": "Network Engineering",
+    "semester": "Fall 2024",
+    "instructor": "Dr. Grace King",
+    "studentsEnrolled": ["BYUI013","BYUI014","BYUI016"]
+  },
+  {
+    "courseId": "CS203",
+    "title": "Cybersecurity Fundamentals",
+    "description": "Learn security principles, encryption, and best practices.",
+    "credits": 3,
+    "department": "Cybersecurity",
+    "semester": "Spring 2025",
+    "instructor": "Dr. Henry Young",
+    "studentsEnrolled": ["BYUI006","BYUI007","BYUI015"]
+  },
+  {
+    "courseId": "CS204",
+    "title": "Artificial Intelligence",
+    "description": "Introduction to AI, machine learning, and neural networks.",
+    "credits": 3,
+    "department": "Artificial Intelligence",
+    "semester": "Spring 2025",
+    "instructor": "Dr. Irene Scott",
+    "studentsEnrolled": ["BYUI018","BYUI014","BYUI003"]
+  },
+  {
+    "courseId": "CS205",
+    "title": "Mobile App Development",
+    "description": "Develop mobile applications for Android and iOS.",
+    "credits": 3,
+    "department": "Software Development",
+    "semester": "Fall 2025",
+    "instructor": "Dr. Jack Turner",
+    "studentsEnrolled": ["BYUI012","BYUI015","BYUI017"]
+  },
+  {
+    "courseId": "CS301",
+    "title": "Cloud Computing",
+    "description": "Learn about cloud services, deployment, and serverless apps.",
+    "credits": 3,
+    "department": "Cloud Computing",
+    "semester": "Fall 2025",
+    "instructor": "Dr. Kelly Adams",
+    "studentsEnrolled": ["BYUI019","BYUI020","BYUI001"]
+  },
+  {
+    "courseId": "CS302",
+    "title": "Business Analytics",
+    "description": "Analyze data to support business decision-making.",
+    "credits": 3,
+    "department": "Business Analytics",
+    "semester": "Spring 2026",
+    "instructor": "Dr. Liam Brooks",
+    "studentsEnrolled": ["BYUI010","BYUI014","BYUI006"]
+  },
+  {
+    "courseId": "CS303",
+    "title": "Information Systems",
+    "description": "Introduction to information systems in organizations.",
+    "credits": 3,
+    "department": "Information Systems",
+    "semester": "Spring 2026",
+    "instructor": "Dr. Mia Clark",
+    "studentsEnrolled": ["BYUI009","BYUI002","BYUI017"]
+  },
+  {
+    "courseId": "CS304",
+    "title": "Data Analytics",
+    "description": "Data analysis, visualization, and interpretation techniques.",
+    "credits": 3,
+    "department": "Data Analytics",
+    "semester": "Fall 2026",
+    "instructor": "Dr. Noah Evans",
+    "studentsEnrolled": ["BYUI013","BYUI004","BYUI018"]
+  },
+  {
+    "courseId": "CS305",
+    "title": "Software Testing",
+    "description": "Techniques for testing software applications effectively.",
+    "credits": 3,
+    "department": "Software Testing",
+    "semester": "Fall 2026",
+    "instructor": "Dr. Olivia Foster",
+    "studentsEnrolled": ["BYUI020","BYUI001","BYUI011"]
+  },
+  {
+    "courseId": "CS401",
+    "title": "Advanced Algorithms",
+    "description": "Study complex algorithms and optimization techniques.",
+    "credits": 3,
+    "department": "Computer Science",
+    "semester": "Spring 2027",
+    "instructor": "Dr. Peter Green",
+    "studentsEnrolled": ["BYUI008","BYUI012","BYUI005"]
+  },
+  {
+    "courseId": "CS402",
+    "title": "Game Development",
+    "description": "Design and implement 2D and 3D games using Unity.",
+    "credits": 3,
+    "department": "Software Development",
+    "semester": "Spring 2027",
+    "instructor": "Dr. Quinn Hill",
+    "studentsEnrolled": ["BYUI016","BYUI018","BYUI019"]
+  },
+  {
+    "courseId": "CS403",
+    "title": "IT Management",
+    "description": "Learn IT project and team management principles.",
+    "credits": 3,
+    "department": "IT Management",
+    "semester": "Fall 2027",
+    "instructor": "Dr. Rachel Ivy",
+    "studentsEnrolled": ["BYUI016","BYUI014","BYUI003"]
+  },
+  {
+    "courseId": "CS404",
+    "title": "Network Engineering",
+    "description": "Design, configure, and troubleshoot computer networks.",
+    "credits": 3,
+    "department": "Network Engineering",
+    "semester": "Fall 2027",
+    "instructor": "Dr. Sam Jones",
+    "studentsEnrolled": ["BYUI017","BYUI002","BYUI006"]
+  },
+  {
+    "courseId": "CS405",
+    "title": "Capstone Project",
+    "description": "Complete a full-scale software project applying learned skills.",
+    "credits": 3,
+    "department": "Software Development",
+    "semester": "Spring 2028",
+    "instructor": "Dr. Thomas White",
+    "studentsEnrolled": ["BYUI001","BYUI005","BYUI010"]
+  }
+]

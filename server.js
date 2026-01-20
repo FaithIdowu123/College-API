@@ -1,11 +1,10 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
-const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./swagger-output.json');
 const errorHandler = require("./utilities/errorHandler")
 const db = require('./database/connect');
-const studentRoutes = require('./routes/student');
+const routes = require('./routes');
+
 
 dotenv.config();
 
@@ -19,9 +18,7 @@ app.get('/', (req, res) => {
   res.send('Welcome to the College API');
 });
 
-app.use("/student", studentRoutes);
-
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use("/", routes);
 
 app.use(errorHandler);
 

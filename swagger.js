@@ -5,11 +5,17 @@ const doc = {
     title: 'College API',
     description: 'CSE 341 CRUD API using MongoDB'
   },
-  host: 'college-api-gz7o.onrender.com/student',
+  host: 'college-api-gz7o.onrender.com',
   schemes: ['https']
 };
 
+// Output file for Swagger JSON
 const outputFile = './swagger-output.json';
-const endpointsFiles = ['./routes/student.js'];
 
+// List of route files to include in Swagger
+const endpointsFiles = [
+  './routes/index.js' // <-- add your courses routes here
+];
+
+// Generate swagger-output.json
 swaggerAutogen(outputFile, endpointsFiles, doc);
