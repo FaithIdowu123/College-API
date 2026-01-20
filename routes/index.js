@@ -2,7 +2,6 @@ const express = require('express');
 const routes = express.Router();
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('../swagger-output.json');
-const errorHandler = require("../utilities/errorHandler")
 
 const studentRoutes = require('./student');
 const courseRoutes = require('./course'); 
