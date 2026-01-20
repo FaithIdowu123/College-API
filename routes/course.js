@@ -1,7 +1,7 @@
 const express = require('express');
 const routes = express.Router();
 const coursesController = require('../controllers/course');
-const { addStudentSchema } = require('../utilities/course'); // Joi schema for studentId
+const { addStudentSchema, courseSchema } = require('../utilities/course'); // Joi schema for studentId
 const validate = require('../utilities/validate');
 
 // GET all courses
