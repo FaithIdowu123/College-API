@@ -20,7 +20,7 @@ const courseSchema = Joi.object({
   credits: Joi.number().integer().min(1).max(10).required(),
   department: Joi.string().min(2).max(50).required(),
   semester: Joi.string().min(3).max(50).required(),
-  instructor: Joi.string().min(2).max(100).required(),
+  instructor: Joi.string().min(2).max(100).required()
 });
 
 module.exports = {

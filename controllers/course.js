@@ -70,7 +70,15 @@ coursesController.removeStudentFromCourse = async (req, res) => {
 // Update course info
 coursesController.updateCourse = async (req, res) => {
   const courseId = req.params.id;
-  const courseData = req.body; // expects fields like name, code, description, etc.
+  const courseData = {
+    courseId: req.body.courseId,
+    title: req.body.title,
+    description: req.body.description,
+    credits: req.body.credits,
+    department: req.body.department,
+    semester: req.body.semester,
+    instructor: req.body.instructor// default to empty array if not provided
+  }; // expects fields like name, code, description, etc.
 
   const result = await coursesModel.updateCourseById(courseId, courseData);
   if (result.modifiedCount === 0) {
