@@ -29,7 +29,7 @@ routes.get("/:id", async (req, res, next) => {
 });
 
 // POST new student
-routes.post("/", validate(studentSchema), async (req, res) => {
+routes.post("/", validate(studentSchema), async (req, res, next) => {
     try {
         await studentController.addStudent(req, res);
     } catch (error) {
@@ -41,7 +41,7 @@ routes.post("/", validate(studentSchema), async (req, res) => {
 });
 
 // PUT update student
-routes.put("/:id", validate(studentSchema), async (req, res) => {
+routes.put("/:id", validate(studentSchema), async (req, res, next) => {
     try {
         await studentController.updateStudent(req, res);
     } catch (error) {
@@ -53,7 +53,7 @@ routes.put("/:id", validate(studentSchema), async (req, res) => {
 });
 
 // DELETE student
-routes.delete("/:id", async (req, res) => {
+routes.delete("/:id", async (req, res, next) => {
     try {
         await studentController.deleteStudent(req, res);
     } catch (error) {

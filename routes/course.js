@@ -5,7 +5,7 @@ const { addStudentSchema, courseSchema } = require('../utilities/course'); // Jo
 const validate = require('../utilities/validate');
 
 // GET all courses
-routes.get("/", async (req, res) => {
+routes.get("/", async (req, res, next) => {
     try {
         await coursesController.getAllCourses(req, res);
     } catch (error) {
@@ -17,7 +17,7 @@ routes.get("/", async (req, res) => {
 });
 
 // GET course by ID
-routes.get("/:id", async (req, res) => {
+routes.get("/:id", async (req, res, next) => {
     try {
         await coursesController.getCourseById(req, res);
     } catch (error) {
@@ -29,7 +29,7 @@ routes.get("/:id", async (req, res) => {
 });
 
 // POST add student to a course
-routes.post("/:id/add-student", validate(addStudentSchema), async (req, res) => {
+routes.post("/:id/add-student", validate(addStudentSchema), async (req, res, next) => {
     try {
         await coursesController.addStudentToCourse(req, res);
     } catch (error) {
@@ -41,7 +41,7 @@ routes.post("/:id/add-student", validate(addStudentSchema), async (req, res) => 
 });
 
 // POST remove student from a course
-routes.post("/:id/remove-student", validate(addStudentSchema), async (req, res) => {
+routes.post("/:id/remove-student", validate(addStudentSchema), async (req, res, next) => {
     try {
         await coursesController.removeStudentFromCourse(req, res);
     } catch (error) {
@@ -53,7 +53,7 @@ routes.post("/:id/remove-student", validate(addStudentSchema), async (req, res) 
 });
 
 // update course
-routes.put("/:id", validate(courseSchema), async (req, res) => {
+routes.put("/:id", validate(courseSchema), async (req, res, next) => {
   try {
     await coursesController.updateCourse(req, res);
   } catch (error) {
@@ -65,7 +65,7 @@ routes.put("/:id", validate(courseSchema), async (req, res) => {
 });
 
 // Delete course
-routes.delete("/:id", validate(courseSchema), async (req, res) => {
+routes.delete("/:id", validate(courseSchema), async (req, res, next) => {
   try {
     await coursesController.deleteCourse(req, res);
   } catch (error) {
