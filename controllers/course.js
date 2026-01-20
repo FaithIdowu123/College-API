@@ -67,4 +67,33 @@ coursesController.removeStudentFromCourse = async (req, res) => {
     res.status(201).json({ Message: "Student removed from course" });
 };
 
+// Update course info
+coursesController.updateCourse = async (req, res) => {
+  const courseId = req.params.id;
+  const courseData = req.body; // expects fields like name, code, description, etc.
+
+  const result = await coursesModel.updateCourseById(courseId, courseData);
+  if (result.modifiedCount === 0) {
+    const error = new Error('Course not found or no changes made');
+    error.status = 400;
+    throw error;
+  }
+
+  res.status(200).json({ message: "Course updated successfully" });
+};
+
+// Delete course
+coursesController.deleteCourse = async (req, res) => {
+  const courseId = req.params.id;
+
+  const result = await coursesModel.deleteCourseById(courseId);
+  if (result.deletedCount === 0) {
+    const error = new Error('Course not found');
+    error.status = 400;
+    throw error;
+  }
+
+  res.status(200).json({ message: "Course deleted successfully" });
+};
+
 module.exports = coursesController;

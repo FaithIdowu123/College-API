@@ -48,4 +48,22 @@ routes.post("/:id/remove-student", validate(addStudentSchema), async (req, res) 
     }
 });
 
+// update course
+routes.put("/:id", validate(courseSchema), async (req, res) => {
+  try {
+    await coursesController.updateCourse(req, res);
+  } catch (error) {
+    res.status(error.status || 500).json({ message: error.message || "Failed to update course" });
+  }
+});
+
+// Delete course
+routes.delete("/:id", validate(courseSchema), async (req, res) => {
+  try {
+    await coursesController.deleteCourse(req, res);
+  } catch (error) {
+    res.status(error.status || 500).json({ message: error.message || "Failed to delete course" });
+  }
+});
+
 module.exports = routes;
