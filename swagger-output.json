@@ -203,6 +203,36 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "courseId": {
+                  "example": "any"
+                },
+                "title": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                },
+                "credits": {
+                  "example": "any"
+                },
+                "department": {
+                  "example": "any"
+                },
+                "semester": {
+                  "example": "any"
+                },
+                "instructor": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
         "responses": {
