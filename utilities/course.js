@@ -12,7 +12,7 @@ const addStudentSchema = Joi.object({
   })
 });
 
-// Validate a course object (for PUT/update)
+// Validate a course object 
 const courseSchema = Joi.object({
   courseId: Joi.string().min(2).max(20).required(),
   title: Joi.string().min(2).max(100).required(),

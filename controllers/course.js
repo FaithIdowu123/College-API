@@ -77,8 +77,8 @@ coursesController.updateCourse = async (req, res) => {
     credits: req.body.credits,
     department: req.body.department,
     semester: req.body.semester,
-    instructor: req.body.instructor// default to empty array if not provided
-  }; // expects fields like name, code, description, etc.
+    instructor: req.body.instructor
+  }; 
 
   const result = await coursesModel.updateCourseById(courseId, courseData);
   if (result.modifiedCount === 0) {
