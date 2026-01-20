@@ -9,9 +9,10 @@ routes.get("/", async (req, res, next) => {
     try {
         await studentController.getAllStudents(req, res);
     } catch (error) {
-        res.status(error.status || 500).json({
-            message: error.message || "Failed to fetch students"
-        });
+        if (error.status == 500){
+            error.message = "Failed to fetch students"
+        }
+        next(error);
     }
 });
 
@@ -20,9 +21,10 @@ routes.get("/:id", async (req, res, next) => {
     try {
         await studentController.getStudentById(req, res);
     } catch (error) {
-        res.status(error.status || 500).json({
-            message: error.message || "Failed to fetch student"
-        });
+        if (error.status == 500){
+            error.message = "Failed to fetch student"
+        }
+        next(error);
     }
 });
 
@@ -31,9 +33,10 @@ routes.post("/", validate(studentSchema), async (req, res) => {
     try {
         await studentController.addStudent(req, res);
     } catch (error) {
-        res.status(error.status || 500).json({
-            message: error.message || "Failed to add student"
-        });
+        if (error.status == 500){
+            error.message = "Failed to add student"
+        }
+        next(error);
     }
 });
 
@@ -42,20 +45,22 @@ routes.put("/:id", validate(studentSchema), async (req, res) => {
     try {
         await studentController.updateStudent(req, res);
     } catch (error) {
-        res.status(error.status || 500).json({
-            message: error.message || "Failed to update student"
-        });
+        if (error.status == 500){
+            error.message = "Failed to update students"
+        }
+        next(error);
     }
 });
 
 // DELETE student
-routes.delete("/:id", async (req, res) => {
+routes.delete("/:id", async (req, resy) => {
     try {
         await studentController.deleteStudent(req, res);
     } catch (error) {
-        res.status(error.status || 500).json({
-            message: error.message || "Failed to delete student"
-        });
+        if (error.status == 500){
+            error.message = "Failed to delete students"
+        }
+        next(error);
     }
 });
 

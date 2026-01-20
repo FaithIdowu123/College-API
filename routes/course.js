@@ -9,9 +9,10 @@ routes.get("/", async (req, res) => {
     try {
         await coursesController.getAllCourses(req, res);
     } catch (error) {
-        res.status(error.status || 500).json({
-            message: error.message || "Failed to fetch courses"
-        });
+        if (error.status == 500){
+            error.message = "Failed to fetch courses"
+        }
+        next(error);
     }
 });
 
@@ -20,9 +21,10 @@ routes.get("/:id", async (req, res) => {
     try {
         await coursesController.getCourseById(req, res);
     } catch (error) {
-        res.status(error.status || 500).json({
-            message: error.message || "Failed to fetch course"
-        });
+        if (error.status == 500){
+            error.message = "Failed to fetch course"
+        }
+        next(error);
     }
 });
 
@@ -31,9 +33,10 @@ routes.post("/:id/add-student", validate(addStudentSchema), async (req, res) => 
     try {
         await coursesController.addStudentToCourse(req, res);
     } catch (error) {
-        res.status(error.status || 500).json({
-            message: error.message || "Failed to add student to course"
-        });
+       if (error.status == 500){
+            error.message = "Failed to add student to course"
+        }
+        next(error);
     }
 });
 
@@ -42,9 +45,10 @@ routes.post("/:id/remove-student", validate(addStudentSchema), async (req, res) 
     try {
         await coursesController.removeStudentFromCourse(req, res);
     } catch (error) {
-        res.status(error.status || 500).json({
-            message: error.message || "Failed to remove student from course"
-        });
+        if (error.status == 500){
+            error.message = "Failed to remove student from course"
+        }
+        next(error);
     }
 });
 
@@ -53,7 +57,10 @@ routes.put("/:id", validate(courseSchema), async (req, res) => {
   try {
     await coursesController.updateCourse(req, res);
   } catch (error) {
-    res.status(error.status || 500).json({ message: error.message || "Failed to update course" });
+        if (error.status == 500){
+            error.message = "Failed to update course"
+        }
+        next(error);
   }
 });
 
@@ -62,7 +69,10 @@ routes.delete("/:id", validate(courseSchema), async (req, res) => {
   try {
     await coursesController.deleteCourse(req, res);
   } catch (error) {
-    res.status(error.status || 500).json({ message: error.message || "Failed to delete course" });
+        if (error.status == 500){
+            error.message = "Failed to delete course"
+        }
+        next(error);
   }
 });
 
