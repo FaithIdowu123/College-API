@@ -3,6 +3,7 @@ const routes = express.Router();
 const studentController = require('../controllers/student');
 const { studentSchema } = require('../utilities/student');
 const validate = require('../utilities/validate');
+const { isauthenticated } = require('../utilities/authenticate');
 
 // GET all students
 routes.get("/", async (req, res, next) => {
@@ -29,7 +30,7 @@ routes.get("/:id", async (req, res, next) => {
 });
 
 // POST new student
-routes.post("/", validate(studentSchema), async (req, res, next) => {
+routes.post("/", isauthenticated, validate(studentSchema), async (req, res, next) => {
     try {
         await studentController.addStudent(req, res);
     } catch (error) {
@@ -41,7 +42,7 @@ routes.post("/", validate(studentSchema), async (req, res, next) => {
 });
 
 // PUT update student
-routes.put("/:id", validate(studentSchema), async (req, res, next) => {
+routes.put("/:id", isauthenticated,validate(studentSchema), async (req, res, next) => {
     try {
         await studentController.updateStudent(req, res);
     } catch (error) {
@@ -53,7 +54,7 @@ routes.put("/:id", validate(studentSchema), async (req, res, next) => {
 });
 
 // DELETE student
-routes.delete("/:id", async (req, res, next) => {
+routes.delete("/:id", isauthenticated, async (req, res, next) => {
     try {
         await studentController.deleteStudent(req, res);
     } catch (error) {

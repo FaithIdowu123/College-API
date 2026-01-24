@@ -5,6 +5,8 @@ const doc = {
     title: 'College API',
     description: 'CSE 341 CRUD API using MongoDB'
   },
+  /* host: 'localhost:3000',
+  schemes: ['http'] */
   host: 'college-api-gz7o.onrender.com',
   schemes: ['https']
 };

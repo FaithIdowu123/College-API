@@ -3,6 +3,9 @@ const routes = express.Router();
 const coursesController = require('../controllers/course');
 const { addStudentSchema, courseSchema } = require('../utilities/course'); // Joi schema for studentId
 const validate = require('../utilities/validate');
+const { isauthenticated } = require('../utilities/authenticate');
+
+// Apply authentication middleware to all courses routes
 
 // GET all courses
 routes.get("/", async (req, res, next) => {
@@ -29,7 +32,7 @@ routes.get("/:id", async (req, res, next) => {
 });
 
 // POST add student to a course
-routes.post("/:id/add-student", validate(addStudentSchema), async (req, res, next) => {
+routes.post("/:id/add-student", isauthenticated, validate(addStudentSchema), async (req, res, next) => {
     try {
         await coursesController.addStudentToCourse(req, res);
     } catch (error) {
@@ -41,7 +44,7 @@ routes.post("/:id/add-student", validate(addStudentSchema), async (req, res, nex
 });
 
 // POST remove student from a course
-routes.post("/:id/remove-student", validate(addStudentSchema), async (req, res, next) => {
+routes.post("/:id/remove-student", isauthenticated, validate(addStudentSchema), async (req, res, next) => {
     try {
         await coursesController.removeStudentFromCourse(req, res);
     } catch (error) {
@@ -53,7 +56,7 @@ routes.post("/:id/remove-student", validate(addStudentSchema), async (req, res, 
 });
 
 // update course
-routes.put("/:id", validate(courseSchema), async (req, res, next) => {
+routes.put("/:id", isauthenticated,validate(courseSchema), async (req, res, next) => {
   try {
     await coursesController.updateCourse(req, res);
   } catch (error) {
@@ -65,7 +68,7 @@ routes.put("/:id", validate(courseSchema), async (req, res, next) => {
 });
 
 // Delete course
-routes.delete("/:id", validate(courseSchema), async (req, res, next) => {
+routes.delete("/:id", isauthenticated, validate(courseSchema), async (req, res, next) => {
   try {
     await coursesController.deleteCourse(req, res);
   } catch (error) {
