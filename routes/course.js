@@ -32,7 +32,7 @@ routes.get("/:id", async (req, res, next) => {
 });
 
 // POST add student to a course
-routes.post("/:id/add-student", isauthenticated, validate(addStudentSchema), async (req, res, next) => {
+routes.post("/add-student", isauthenticated, validate(addStudentSchema), async (req, res, next) => {
     try {
         await coursesController.addStudentToCourse(req, res);
     } catch (error) {

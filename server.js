@@ -4,67 +4,38 @@ const dotenv = require('dotenv');
 const errorHandler = require("./utilities/errorHandler")
 const db = require('./database/connect');
 const routes = require('./routes');
-const bodyParser = require('body-parser');
 const session = require('express-session');
-const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const passport = require('./utilities/passport');
+
+
+app = express();
 
 dotenv.config();
 
-const app = express();
 
-app.use(cors());
+app.use(cors({ origin: '*', credentials: true }));
+
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(session({
+  secret: 'your_secret_key',
+  resave: false,
+  saveUninitialized: false,
+  cookie: { httpOnly: true }
+}));
 
-app
-  .use(bodyParser.json())
-  .use(session({
-    secret: 'your_secret_key',
-    resave: false,
-    saveUninitialized: false
-  }))
-  .use(passport.initialize())
-  .use(passport.session())
-  .use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Origin, x-requested-With, Content-Type, Accept, Z-key, Authorization');
-    next();
-  })
-  .use(cors({methods: ['GET', 'POST', 'PUT', 'DELETE']}))
-  .use(cors({origin: '*'}))
-  .use("/", routes);
+app.use(passport.initialize());
+app.use(passport.session());
 
-passport.use(new GoogleStrategy({
-    clientID: process.env.GOOGLE_CLIENT_ID,
-    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: process.env.GOOGLE_CALLBACK_URL
-  },
-  function(accessToken, refreshToken, profile, done) {
-    // This is the user object
-    return done(null, profile);
-  }
-));
 
-passport.serializeUser((user, done) => {
-  done(null, user);
-});
-
-passport.deserializeUser((obj, done) => {
-  done(null, obj);
-});
 
 app.get('/', (req, res) => {
-  res.send(req.session.user ? `Logged in as ${req.session.user.displayName}` : `Not logged in`);
+  res.send("Welcom to College API" + (req.user ? `${req.user.firstName}` : ""));
 });
 
-app.get('/auth/callback', passport.authenticate('google', 
-    {failureRedirect: '/api-docs'}
-  ), (req, res) => {
-    req.session.user = req.user;
-    res.redirect('/');
-});
+app.use('/', routes);
+
+// Auth routes
+
 
 app.use(errorHandler);
 

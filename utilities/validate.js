@@ -2,7 +2,7 @@ const validate = (schema) => {
   return async (req, res, next) => {
     try {
       // Validate the request body asynchronously
-      await schema.validateAsync(req.body, { abortEarly: false });
+      await schema.validateAsync(req.body);
       next(); // Validation passed
     } catch (error) {
       // Map all Joi errors into an array of messages

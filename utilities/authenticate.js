@@ -1,13 +1,10 @@
-const isauthenticated = (req, res, next) => {
-    console.log("emts");
-    if (!req.session.user) {
-       const validationError = new Error('You do not have access');
-       validationError.status = 401;// optional, include all messages
-       next(validationError);
-    }
-    next();
-}
 
-module.exports = {
-    isauthenticated
+
+const isauthenticated = (req, res, next) => {
+  if (!req.isAuthenticated()) return res.status(401).json({ message: 'You are not logged in.' });
+  next();
 };
+
+
+
+module.exports = { isauthenticated };
