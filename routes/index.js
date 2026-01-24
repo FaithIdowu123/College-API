@@ -5,7 +5,6 @@ const swaggerDocument = require('../swagger-output.json');
 
 const studentRoutes = require('./student');
 const courseRoutes = require('./course'); 
-const passport = require('passport');
 
 // Use routes
 routes.use('/student', studentRoutes);  // all student routes under /students
