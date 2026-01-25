@@ -29,7 +29,7 @@ app.use(passport.session());
 
 
 app.get('/', (req, res) => {
-  res.send("Welcom to College API" + (req.user ? `${req.user.firstName}` : ""));
+  res.send("Welcom to College API " + (req.user ? `${req.user.firstName}` : ""));
 });
 
 app.use('/', routes);
