@@ -246,10 +246,16 @@
         }
       }
     },
-    "/course/add-student": {
+    "/course/{id}/add-student": {
       "post": {
         "description": "",
         "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
           {
             "name": "body",
             "in": "body",
