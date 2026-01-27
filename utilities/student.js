@@ -10,6 +10,11 @@ const studentSchema = Joi.object({
   isActive: Joi.boolean().required()
 });
 
+const studentIdSchema = Joi.object({
+  studentId: Joi.string().min(3).max(20).required()
+});
+
 module.exports = {
-  studentSchema
+  studentSchema,
+  studentIdSchema
 };

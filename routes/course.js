@@ -32,7 +32,7 @@ routes.get("/:id", async (req, res, next) => {
 });
 
 // POST add student to a course
-routes.post("/:id/add-student", isauthenticated, async (req, res, next) => {
+routes.post("/:id/add-student", isauthenticated, validate(addStudentSchema), async (req, res, next) => {
     try {
         await coursesController.addStudentToCourse(req, res);
     } catch (error) {
@@ -44,7 +44,7 @@ routes.post("/:id/add-student", isauthenticated, async (req, res, next) => {
 });
 
 // POST remove student from a course
-routes.post("/:id/remove-student", isauthenticated, async (req, res, next) => {
+routes.post("/:id/remove-student", isauthenticated, validate(addStudentSchema), async (req, res, next) => {
     try {
         await coursesController.removeStudentFromCourse(req, res);
     } catch (error) {
